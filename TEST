@@ -1,10 +1,15 @@
 ```BASH
-const formValid = computed(() => !!(
-    newDroit.value.role &&
-    newDroit.value.type_de_droit &&
-    newDroit.value.date_debut &&
-    newDroit.value.organisme &&
-    newDroit.value.date_fin &&
-    isDateFinValid.value
-));
+const formValid = computed(() => {
+    const { role, type_de_droit, date_debut, organisme, date_fin } = newDroit.value;
+
+    // Fonction pour vérifier si une valeur est "truthy"
+    const isValid = (value) => !!value;
+
+    return isValid(role) &&
+           isValid(type_de_droit) &&
+           isValid(date_debut) &&
+           isValid(organisme) &&
+           isValid(date_fin) &&
+           isDateFinValid.value;
+});
 ```
