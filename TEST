@@ -1,0 +1,10 @@
+```BASH
+const formValid = computed(() => !!(
+    newDroit.value.role &&
+    newDroit.value.type_de_droit &&
+    newDroit.value.date_debut &&
+    newDroit.value.organisme &&
+    newDroit.value.date_fin &&
+    isDateFinValid.value
+));
+```
